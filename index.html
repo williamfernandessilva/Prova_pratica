@@ -37,7 +37,7 @@
     <p id="resulibra"></p>
     <br><br>
 <label>Real =</label>
-    <input  type="text" id="real">
+    <input type="text" id="valor">
     <br><br>
 
     <button style="font-size: 30px; border-radius: 20px;"  type ="button"id="converter">Calcular</button>
@@ -46,36 +46,37 @@
 
     <script>
         
-        function converterUnidades(dolar,euro,libra, real) {
-    if (dolar === "dolar" && real === "real") {
-      return real * dolar;
-    } else if (dolar === "euro" && real === "real") {
-      return real * euro;
-    } else if (libra === "libra" && real === "real") {
-      return real*libra;
+        function converterUnidades(dolar,euro,libra, real ,valor, valorD,valorE,valorL) {
+    if (dolar === "dolar" && real === "valor") {
+      return valorD = valor * dolar;
+    } else if (dolar === "euro" && real === "valor") {
+      return valorE= valor * euro;
+    } else if (libra === "libra" && real === "valor") {
+      return valorL = valor *libra;
     } 
   }
   const botaoConverter = document.getElementById("converter");
+  const valorInput = document.getElementById("valor");
   const dolarInput = document.getElementById("dolar");
   const euroInput = document.getElementById("euro");
   const libraInput = document.getElementById("libra");
-  const realInput = document.getElementById("real");
   const resudolarP = document.getElementById("resudolar");
   const resueuroP = document.getElementById("resueuro");
   const resulibraP = document.getElementById("resulibra");
   
 
   botaoConverter.addEventListener("click", function () {
-    const dolar = parseFloat( dolarInput);
-    const euro = parseFloat(euroInput);
-    const libra = parseFloat(libraInput);
+    const valor = valorInput.value;
+    const valorD = resudolarP.value;
+    const valorE = resueuroP.value;
+    const valorL = resulibraP.value;
    
 
-   converterUnidades( dolar, euro, libra);  
+   converterUnidades( valorD, valorE, valorL);  
 
-   resudolarP.innerHTML = `${resudolarP} `;
-   resueuroP.innerHTML = `${resueuroP} `;
-   resulibraP.innerHTML = `${resulibraP} `;
+   resudolarP.innerHTML = `${valorD} `;
+   resueuroP.innerHTML = `${valorE} `;
+   resulibraP.innerHTML = `${valorL} `;
   });
 
 
