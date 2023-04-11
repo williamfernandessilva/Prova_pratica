@@ -49,7 +49,7 @@
         function converterUnidades(dolar,euro,libra, real) {
     if (dolar === "dolar" && real === "real") {
       return real * dolar;
-    } else if (euro === "euro" && real === "real") {
+    } else if (dolar === "euro" && real === "real") {
       return real * euro;
     } else if (libra === "libra" && real === "real") {
       return real*libra;
@@ -66,17 +66,16 @@
   
 
   botaoConverter.addEventListener("click", function () {
-    const dolar = dolarInput.value;
-    const euro = euroInput.value;
-    const libra = libraInput.value;
-    const real = realInput.value;
+    const dolar = parseFloat( dolarInput);
+    const euro = parseFloat(euroInput);
+    const libra = parseFloat(libraInput);
    
 
-    const valorConvertido = converterUnidades(real, dolar, euro, libra);
+   converterUnidades( dolar, euro, libra);  
 
-    resudolarP.innerHTML = `${resudolarP} `;
-    resueuroP.innerHTML = `${resueuroP} `;
-    resulibraP.innerHTML = `${resulibraP} `;
+   resudolarP.innerHTML = `${resudolarP} `;
+   resueuroP.innerHTML = `${resueuroP} `;
+   resulibraP.innerHTML = `${resulibraP} `;
   });
 
 
