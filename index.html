@@ -20,6 +20,7 @@
     </style>
     
 </head>
+<div>
 
 <body style="background-color: rgb(196, 134, 255);">
 
@@ -28,68 +29,88 @@
 
 <label >Dolar =</label>
     <input  placeholder="Digite Câmbio" type="text" id="dolar">
-    <p id="resudolar"></p>
+
+    <input  type="number" id="resuD" disabled>
+<br>
 <label>Euro =</label>
     <input  placeholder="Digite Câmbio" type="text" id="euro">
-    <p id="resueuro"></p>
+
+    <input type="number" id="resuE" disabled>
+    <br>
+
 <label>Libra =</label>
     <input  placeholder="Digite Câmbio" type="text" id="libra">
-    <p id="resulibra"></p>
+
+   <input  type="number" id="resuL" disabled>
+
     <br><br>
 <label>Real =</label>
-    <input  type="text" id="valor">
+    <input   type="text" id="real">
     <br><br>
 
-    <button style="font-size: 30px; border-radius: 20px;"  type ="button"id="converter">Calcular</button>
+    <button style="font-size: 30px;" onclick="converter()" class="btn btn-outline-light;" >Converter</button>
 
     </form>
+</div>
+    </body>
+        
+    </body>
 
     <script>
         
-        function converterUnidades(dolar,euro,libra, real ,valor, valorD,valorE,valorL) {
-    if (dolar === "dolar" && real === "valor") {
-      return valorD = valor * dolar;
-    } else if (dolar === "euro" && real === "valor") {
-      return valorE= valor * euro;
-    } else if (libra === "libra" && real === "valor") {
-      return valorL = valor *libra;
-    } 
-  }
-  const botaoConverter = document.getElementById("converter");
-  const valorInput = document.getElementById("valor");
-  const dolarInput = document.getElementById("dolar");
-  const euroInput = document.getElementById("euro");
-  const libraInput = document.getElementById("libra");
-  const resudolarP = document.getElementById("resudolar");
-  const resueuroP = document.getElementById("resueuro");
-  const resulibraP = document.getElementById("resulibra");
-  const valorEInput = document.getElementById("valorE");
-  const valorLInput = document.getElementById("valoL");
-  const valorDInput = document.getElementById("valoD");
-  
-
-  botaoConverter.addEventListener("click", function () {
+                 function converter()
+        {
    
-    const resudolarP = valorDInput.value;
-    const resueuroP = valorEInput.value;
-    const resulibraP = valorLInput.value;
-   
+        var real = document.getElementById("real");
+        var dolar = document.getElementById("dolar");
+        var euro = document.getElementById("euro");
+        var libra = document.getElementById("libra");
+        var resuD = document.getElementById("resuD");
+        var resuE = document.getElementById("resuE");
+        var resuL = document.getElementById("resuL");
+       
+        
+       
 
-   converterUnidades( valorD, valorE, valorL);  
+            if(real.value && dolar.value && euro.value && libra.value)
+        {
+            resuD.value = real.value / dolar.value;
+            resuE.value = real.value / euro.value;
+            resuL.value = real.value / libra.value;
 
-   resudolarP.innerHTML = `${valorD} `;
-   resueuroP.innerHTML = `${valorE} `;
-   resulibraP.innerHTML = `${valorL} `;
-  });
+        }
+             else if(real.value && dolar.value && euro.value)
+        {
+            resuD.value = real.value / dolar.value;
+            resuE.value = real.value / euro.value;
 
+        }
+                else if(real.value && dolar.value && libra.value)
+        {
+            resuD.value = real.value / dolar.value;
+            resuL.value = real.value / libra.value;
+        }
 
+                else if(real.value && libra.value && euro.value)
+        {
+            resuL.value = real.value / libra.value;
+            resuE.value = real.value / euro.value;
+        }
 
+             else if(real.value && dolar.value)
+        {
+            resuD.value = real.value / dolar.value;
+        }
+             else if(real.value && euro.value)
+        {
 
+            resuE.value = real.value / euro.value;
+        }
+                else if(real.value && libra.value)
+        {
+            resuL.value = real.value / libra.value;
 
-
-    </script>
-
-
-</body>
-
+        }
+    }
+ </script>
 </html>
