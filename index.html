@@ -27,17 +27,17 @@
 <form style="text-align: center;" >
 
 <label >Dolar =</label>
-    <input placeholder="Digite Câmbio" type="text" id="dolar">
+    <input  placeholder="Digite Câmbio" type="text" id="dolar">
     <p id="resudolar"></p>
 <label>Euro =</label>
-    <input placeholder="Digite Câmbio" type="text" id="euro">
+    <input  placeholder="Digite Câmbio" type="text" id="euro">
     <p id="resueuro"></p>
 <label>Libra =</label>
-    <input placeholder="Digite Câmbio" type="text" id="libra">
+    <input  placeholder="Digite Câmbio" type="text" id="libra">
     <p id="resulibra"></p>
     <br><br>
 <label>Real =</label>
-    <input type="text" id="real">
+    <input  type="text" id="real">
     <br><br>
 
     <button style="font-size: 30px; border-radius: 20px;"  type ="button"id="converter">Calcular</button>
@@ -63,22 +63,21 @@
   const resudolarP = document.getElementById("resudolar");
   const resueuroP = document.getElementById("resueuro");
   const resulibraP = document.getElementById("resulibra");
+  
 
   botaoConverter.addEventListener("click", function () {
-    const dolar = parseFloat(dolarInput.real);
-    const euro = parseFloat(euroInput.real);
-    const libra = parseFloat(libraInput.real);
-    const real = parseFloat(realInput.value);
+    const dolar = dolarInput.value;
+    const euro = euroInput.value;
+    const libra = libraInput.value;
+    const real = realInput.value;
    
 
     const valorConvertido = converterUnidades(real, dolar, euro, libra);
 
-    resudolarP.innerHTML = `${valorConvertido} ${}`;
-    resueuroP.innerHTML = `${valorConvertido} ${}`;
-    resulibraP.innerHTML = `${valorConvertido} ${}`;
+    resudolarP.innerHTML = `${resudolarP} `;
+    resueuroP.innerHTML = `${resueuroP} `;
+    resulibraP.innerHTML = `${resulibraP} `;
   });
-
-
 
 
 
