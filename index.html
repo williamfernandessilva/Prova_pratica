@@ -13,30 +13,58 @@
             font-size: 25px;
             
         }
-
         input{
-            font-size: 50%;
+            font-size: 25px;
+            border-radius: 20px;
         }
     </style>
     
 </head>
 
-<body style="background-color: blueviolet;">
+<body style="background-color: rgb(196, 134, 255);">
 
     <h1 style="text-align: center; font-size: 50px; ">Prova Pratica </h1>
 <form style="text-align: center;" >
 
-<label >Dolar</label>
-    <input type="text" id="dolar">
-<label>Euro</label>
-    <input type="text" id="euro">
-<label>Libra</label>
-    <input type="text" id="libra">
-    <br>
-<label>Real</label>
+<label >Dolar =</label>
+    <input placeholder="Digite Câmbio" type="text" id="dolar">
+    <p id="resudolar"></p>
+<label>Euro =</label>
+    <input placeholder="Digite Câmbio" type="text" id="euro">
+    <p id="resueuro"></p>
+<label>Libra =</label>
+    <input placeholder="Digite Câmbio" type="text" id="libra">
+    <p id="resulibra"></p>
+    <br><br>
+<label>Real =</label>
     <input type="text" id="real">
+    <br><br>
+
+    <button style="font-size: 30px; border-radius: 20px;-"  type ="button"id="converter">Calcular</button>
 
     </form>
+
+    <script>
+        
+        function converterUnidades(dolar,euro,libra, real) {
+    if (dolar === "dolar" && real === "real") {
+      return dolar / 1000;
+    } else if (unidadeEntrada === "euro" && unidadeconvertida === "real") {
+      return valor * 100;
+    } else if (unidadeEntrada === "libra" && unidadeconvertida === "real") {
+      return valor * 1000;
+    } {
+      return valor;
+    }
+  }
+
+
+
+
+
+
+
+    </script>
 
 
 </body>
