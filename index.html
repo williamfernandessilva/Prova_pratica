@@ -40,7 +40,7 @@
     <input type="text" id="real">
     <br><br>
 
-    <button style="font-size: 30px; border-radius: 20px;-"  type ="button"id="converter">Calcular</button>
+    <button style="font-size: 30px; border-radius: 20px;"  type ="button"id="converter">Calcular</button>
 
     </form>
 
@@ -48,15 +48,36 @@
         
         function converterUnidades(dolar,euro,libra, real) {
     if (dolar === "dolar" && real === "real") {
-      return dolar / 1000;
-    } else if (unidadeEntrada === "euro" && unidadeconvertida === "real") {
-      return valor * 100;
-    } else if (unidadeEntrada === "libra" && unidadeconvertida === "real") {
-      return valor * 1000;
-    } {
-      return valor;
-    }
+      return real * dolar;
+    } else if (euro === "euro" && real === "real") {
+      return real * euro;
+    } else if (libra === "libra" && real === "real") {
+      return real*libra;
+    } 
   }
+  const botaoConverter = document.getElementById("converter");
+  const dolarInput = document.getElementById("dolar");
+  const euroInput = document.getElementById("euro");
+  const libraInput = document.getElementById("libra");
+  const realInput = document.getElementById("real");
+  const resudolarP = document.getElementById("resudolar");
+  const resueuroP = document.getElementById("resueuro");
+  const resulibraP = document.getElementById("resulibra");
+
+  botaoConverter.addEventListener("click", function () {
+    const dolar = parseFloat(dolarInput.real);
+    const euro = parseFloat(euroInput.real);
+    const libra = parseFloat(libraInput.real);
+    const real = parseFloat(realInput.value);
+   
+
+    const valorConvertido = converterUnidades(real, dolar, euro, libra);
+
+    resudolarP.innerHTML = `${valorConvertido} ${}`;
+    resueuroP.innerHTML = `${valorConvertido} ${}`;
+    resulibraP.innerHTML = `${valorConvertido} ${}`;
+  });
+
 
 
 
