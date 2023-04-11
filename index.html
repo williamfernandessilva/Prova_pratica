@@ -37,7 +37,7 @@
     <p id="resulibra"></p>
     <br><br>
 <label>Real =</label>
-    <input type="text" id="valor">
+    <input  type="text" id="valor">
     <br><br>
 
     <button style="font-size: 30px; border-radius: 20px;"  type ="button"id="converter">Calcular</button>
@@ -63,13 +63,16 @@
   const resudolarP = document.getElementById("resudolar");
   const resueuroP = document.getElementById("resueuro");
   const resulibraP = document.getElementById("resulibra");
+  const valorEInput = document.getElementById("valorE");
+  const valorLInput = document.getElementById("valoL");
+  const valorDInput = document.getElementById("valoD");
   
 
   botaoConverter.addEventListener("click", function () {
-    const valor = valorInput.value;
-    const valorD = resudolarP.value;
-    const valorE = resueuroP.value;
-    const valorL = resulibraP.value;
+   
+    const resudolarP = valorDInput.value;
+    const resueuroP = valorEInput.value;
+    const resulibraP = valorLInput.value;
    
 
    converterUnidades( valorD, valorE, valorL);  
